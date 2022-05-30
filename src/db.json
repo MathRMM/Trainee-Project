@@ -1,0 +1,30 @@
+{
+    "brand": [
+      {
+        "name": "Volkswagen"
+      },
+      {
+        "name": "Citroen"
+      },
+      {
+        "name": "Cherry"
+      }
+    ],
+    "car": [
+      {
+        "id": 1,
+        "name": "jubileu",
+        "plate": "QJU-9791",
+        "color": "Preto",
+        "brand": "Citroen"
+      },
+      {
+        "id": 2,
+        "name": "Ari",
+        "plate": "GKU-8002",
+        "color": "Laranja",
+        "brand": "Cherry"
+      }
+    ]
+  
+}
