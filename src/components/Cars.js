@@ -65,7 +65,6 @@ function Cars() {
                 <tbody>
                     {dice.map((dados) => (
                         <Preenchertabela
-                            diceKey={dados.name}
                             dicePlate={dados.plate}
                             diceColor={dados.color}
                             diceBrand={dados.brand}

@@ -1,5 +1,7 @@
 import axios from "axios";
 
+
+
 import { useEffect, useState } from 'react';
 
 import { Link } from "react-router-dom";
@@ -14,6 +16,7 @@ import styled from "styled-components";
 
 export default function NewCar() {
 
+    /* ------------------ Pegando a Marca para seleção-------------- */
     const promise = axios.get("http://localhost:3000/brand");
 
     const [dice, setDice] = useState([]);
@@ -40,7 +43,12 @@ export default function NewCar() {
         options: listBrands,
         getOptionLabel: (option) => option.name,
     };
+    /* ------------------ Pegando a Marca para seleção-------------- */
+    /* ------------------ Salvando o novo carro-------------- */
 
+
+
+    /* ------------------ Salvando o novo carro-------------- */
 
     return (
         <Container>
