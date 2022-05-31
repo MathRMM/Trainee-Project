@@ -12,16 +12,20 @@
   "car": [
     {
       "id": "0",
-      "name": "jubileu",
       "plate": "QJU-9791",
       "color": "Preto",
       "brand": "Mitsubishi"
     },
     {
       "id": "1",
-      "name": "Ari",
       "plate": "GKU-8002",
       "color": "Laranja",
+      "brand": "Subaru"
+    },
+    {
+      "id": "2",
+      "plate": "PPK-7777",
+      "color": "Branco",
       "brand": "Subaru"
     }
   ]

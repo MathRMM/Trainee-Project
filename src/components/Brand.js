@@ -19,7 +19,6 @@ export default function Brand() {
     useEffect(() => {
         promise.then((response) => {
             const data = response.data
-            console.log(data)
             setDice(data)
         });
     }, []);
@@ -38,7 +37,7 @@ export default function Brand() {
 
         );
     }
-    console.log(dice)
+    
     return (
         <div className="tablepage">
             <div className="top">

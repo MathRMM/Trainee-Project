@@ -22,10 +22,8 @@ export default function NewCar() {
     const [dice, setDice] = useState([]);
 
     useEffect(() => {
-
         promise.then((response) => {
             const data = response.data
-            console.log(data)
             setDice(data)
         });
     }, []);
@@ -37,17 +35,37 @@ export default function NewCar() {
         i += 1
     })
 
-    console.log(listBrands)
-
     const defaultProps = {
         options: listBrands,
         getOptionLabel: (option) => option.name,
     };
     /* ------------------ Pegando a Marca para seleção-------------- */
     /* ------------------ Salvando o novo carro-------------- */
-
-
-
+    const promise2 = axios.get("http://localhost:3000/car")
+    const [quantityCars, setQuantityCars] = useState(0)
+    promise2.then((response) => {
+        setQuantityCars(String(response.data.length))
+    })
+    const [car, setCar] = useState({
+        id: '',
+        plate: '',
+        color: '',
+        brand: ''
+    });
+    car.id = quantityCars
+    function saveCar() {
+        const request = axios.post("http://localhost:3000/car", car)
+        request.then((response) => {
+            if (response.status === 201) {
+                alert("Criado com sucesso!!")
+            }
+        })
+        request.catch((error) => {
+            if (error.response.status === 500) {
+                alert("Esse id já existe, tente outro.")
+            }
+        })
+    }
     /* ------------------ Salvando o novo carro-------------- */
 
     return (
@@ -62,21 +80,29 @@ export default function NewCar() {
                         {...defaultProps}
                         id="disable-close-on-select"
                         disableCloseOnSelect
+                        onChange={(evt, newValue) => setCar({ ...car, brand: newValue.name })}
                         renderInput={(params) => (
                             <TextField {...params} label="Marca" />
                         )}
                     />
-
                     <div className="datapost">
-                        <TextField id="outlined-basic" label="Placa" variant="outlined" />
+                        <TextField
+                            id="outlined-basic"
+                            label="Placa"
+                            value={car.plate}
+                            onChange={evt => setCar({ ...car, plate: evt.target.value })}
+                            variant="outlined" />
                     </div>
-
                     <div className="datapost">
-                        <TextField id="outlined-basic" label="Cor" variant="outlined" />
+                        <TextField
+                            id="outlined-basic"
+                            label="Cor"
+                            variant="outlined"
+                            value={car.color}
+                            onChange={evt => setCar({ ...car, color: evt.target.value })} />
                     </div>
-
                     <div className="auto-aling">
-                        <Button>Salvar</Button>
+                        <Button onClick={saveCar}>Salvar</Button>
                         <Link to="/car"><Button>Voltar</Button></Link>
                     </div>
                 </Stack>

@@ -1,8 +1,6 @@
-/* import SaveCar from "./SaveBrand" */
-
 import { Link } from "react-router-dom";
 
-import useState from 'react';
+import { useState } from 'react';
 
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -12,10 +10,10 @@ import axios from "axios";
 
 export default function NewBrand() {
 
-    /* ------------------ Salvando o novo carro-------------- */
+    /* ------------------ Salvando o nova marca-------------- */
     const [brand, setBrand] = useState({ id: "", name: '' });
 
-    function SaveCar() {
+    function saveBrand() {
         const request = axios.post("http://localhost:3000/brand", brand)
         request.then((response) => {
             if (response.status === 201) {
@@ -23,15 +21,12 @@ export default function NewBrand() {
             }
         })
         request.catch((error) => {
-            console.log(error)
             if (error.response.status === 500) {
                 alert("Esse id já existe, tente outro.")
             }
         })
-        console.log(brand)
     }
-    /* ------------------ Salvando o novo carro-------------- */
-
+    /* ------------------ Salvando o nova marca-------------- */
     return (
         <Container>
             <div className="top">
@@ -61,20 +56,18 @@ export default function NewBrand() {
                 </div>
 
                 <div className="auto-aling">
-                    <Button onClick={SaveCar}>Salvar</Button>
+                    <Button onClick={saveBrand}>Salvar</Button>
                     <Link to="/car"><Button>Voltar</Button></Link>
                 </div>
             </Content>
         </Container>
     );
 }
-
 const Container = styled.div`
   width: 300px;
   height: 300px;
   margin: 20px 25px;
 `;
-
 const Content = styled.div`
   margin: 20px 0;
 `;

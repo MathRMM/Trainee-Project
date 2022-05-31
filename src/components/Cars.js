@@ -16,7 +16,6 @@ function Cars() {
 
         promise.then((response) => {
             const data = response.data
-            console.log(data)
             setDice(data)
         });
     }, []);
@@ -37,7 +36,6 @@ function Cars() {
 
         );
     }
-    /*   console.log(dice); */
 
     return (
         <div className="tablepage">
