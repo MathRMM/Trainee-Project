@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from 'react';
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 /* -------------Definições----------------- */
 
 const promise = axios.get("http://localhost:3000/car");
@@ -24,7 +25,7 @@ function Cars() {
         let i = 0
         return (
             i = i + 1,
-            <tr id={i}>
+            <tr>
                 <td>{dicePlate}</td>
                 <td>{diceColor}</td>
                 <td>{diceBrand}</td>
@@ -44,10 +45,12 @@ function Cars() {
                 <h1>
                     Carros
                 </h1>
-                <Button variant="outlined">
-                    <ion-icon name="add-circle-outline"></ion-icon>
-                    Novo carro
-                </Button>
+                <Link to="/cars/newcar">
+                    <Button variant="outlined">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                        Novo carro
+                    </Button>
+                </Link>
             </div>
 
             <table className="list">
@@ -62,6 +65,7 @@ function Cars() {
                 <tbody>
                     {dice.map((dados) => (
                         <Preenchertabela
+                            diceKey={dados.name}
                             dicePlate={dados.plate}
                             diceColor={dados.color}
                             diceBrand={dados.brand}

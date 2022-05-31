@@ -45,11 +45,11 @@ export default function Brand() {
                 <h1>
                     Marcas
                 </h1>
-                <Link to = "/cars/newbrand" >
-                <Button variant="outlined">
-                    <ion-icon name="add-circle-outline"></ion-icon>
-                    Nova Marca
-                </Button>
+                <Link to="/cars/newbrand" >
+                    <Button variant="outlined">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                        Nova Marca
+                    </Button>
                 </Link>
             </div>
 
