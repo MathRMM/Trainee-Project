@@ -57,7 +57,7 @@ export default function NewBrand() {
 
                 <div className="auto-aling">
                     <Button onClick={saveBrand}>Salvar</Button>
-                    <Link to="/car"><Button>Voltar</Button></Link>
+                    <Link to="/cars"><Button>Voltar</Button></Link>
                 </div>
             </Content>
         </Container>

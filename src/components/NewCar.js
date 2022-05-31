@@ -103,7 +103,7 @@ export default function NewCar() {
                     </div>
                     <div className="auto-aling">
                         <Button onClick={saveCar}>Salvar</Button>
-                        <Link to="/car"><Button>Voltar</Button></Link>
+                        <Link to="/cars"><Button>Voltar</Button></Link>
                     </div>
                 </Stack>
             </Content>
