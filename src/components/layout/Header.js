@@ -13,7 +13,7 @@ export default function Header() {
                 </h1>
            </div>
             <div className="buttons">
-                <Link to="/cars" > <Button variant="contained">CARRO</Button></Link>
+                <Link to="/cars" > <Button variant="contained">Carro</Button></Link>
                 <Link to="/cars/brand"><Button variant="contained">Marca</Button></Link> 
             </div>
         </header>

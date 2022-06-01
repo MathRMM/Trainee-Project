@@ -1,5 +1,5 @@
 {
-  "brand": [
+  "brands": [
     {
       "id": "0",
       "name": "Mitsubishi"
@@ -7,13 +7,9 @@
     {
       "id": "1",
       "name": "Subaru"
-    },
-    {
-      "id": "3",
-      "name": "BMW"
     }
   ],
-  "car": [
+  "cars": [
     {
       "id": "0",
       "plate": "QJU-9791",
@@ -28,15 +24,15 @@
     },
     {
       "id": "2",
-      "plate": "PPK-7777",
-      "color": "Branco",
-      "brand": "Subaru"
-    },
-    {
-      "id": "3",
       "plate": "LQK-8655",
       "color": "Branco",
       "brand": "BMW"
+    },
+    {
+      "id": 3,
+      "plate": "LQK-8655",
+      "color": "Preto",
+      "brand": "Mitsubishi"
     }
   ]
 }

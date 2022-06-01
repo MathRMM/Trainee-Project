@@ -1,49 +1,19 @@
-import axios from "axios";
-import { useEffect, useState } from 'react';
+import FillTable from "./FillTableBand";
+import Title from "./layout/material/Title";
+import Counter from "./layout/material/Counter";
 
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-
-
-/* -------------Definições----------------- */
-
-const promise = axios.get("http://localhost:3000/brand");
-
-
 /* -------------startando ----------- */
 
-export default function Brand() {
-
-    const [dice, setDice] = useState([]);
-    useEffect(() => {
-        promise.then((response) => {
-            const data = response.data
-            setDice(data)
-        });
-    }, []);
-
-    function Preenchertabela({ name }) {
-        let i = 0
-        return (
-            i = i + 1,
-            <tr id={i}>
-                <td>{name}</td>
-                <td>
-                    <Button>Editar</Button>
-                    <Button>Excluir</Button>
-                </td>
-            </tr>
-
-        );
-    }
-    
+export default function Brand(props) {
+console.log(props.brands)
+    if(props.brands !== undefined){
     return (
         <div className="tablepage">
             <div className="top">
-                <h1>
-                    Marcas
-                </h1>
+                <Title text = "Marca"/>
                 <Link to="/cars/newbrand" >
                     <Button variant="outlined">
                         <ion-icon name="add-circle-outline"></ion-icon>
@@ -60,13 +30,19 @@ export default function Brand() {
                     </tr>
                 </thead>
                 <tbody>
-                    {dice.map((dados) => (
-                        <Preenchertabela
+                    {props.brands.map((dados) => (
+                        <FillTable
                             name={dados.name}
                         />
                     ))}
                 </tbody>
             </table>
+            <Counter text="marcas" value={props.brands.length}/>
         </div>
     )
+}else {
+    return(
+        <Title text = "Carregando..." />
+    )
+}
 }
