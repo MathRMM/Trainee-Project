@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 
-import  {useState}  from 'react';
+import { useState } from 'react';
 
 import { Link } from "react-router-dom";
 
@@ -37,7 +37,7 @@ export default function NewCar(props) {
         color: '',
         brand: ''
     });
-    cars.id = props.cars.length
+    cars.id = props.cars.length + Math.floor(Math.random() * (10000 - 100) + 100)
     function saveCar() {
         const request = axios.post("http://localhost:3000/cars", cars)
         request.then((response) => {
@@ -94,7 +94,6 @@ export default function NewCar(props) {
         </Container>
     );
 }
-
 const Container = styled.div`
   width: 300px;
   height: 300px;

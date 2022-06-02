@@ -14,7 +14,7 @@ export default function NewBrand() {
     const [brand, setBrand] = useState({ id: "", name: '' });
 
     function saveBrand() {
-        const request = axios.post("http://localhost:3000/brand", brand)
+        const request = axios.post("http://localhost:3000/brands", brand)
         request.then((response) => {
             if (response.status === 201) {
                 alert("Criado com sucesso!!")
@@ -32,7 +32,6 @@ export default function NewBrand() {
             <div className="top">
                 <h1>Nova Marca</h1>
             </div>
-
             <Content>
                 <div className="datapost">
                     <TextField
@@ -54,7 +53,6 @@ export default function NewBrand() {
                         onChange={evt => setBrand({ ...brand, name: evt.target.value })}
                         variant="outlined" />
                 </div>
-
                 <div className="auto-aling">
                     <Button onClick={saveBrand}>Salvar</Button>
                     <Link to="/cars/brand"><Button>Voltar</Button></Link>

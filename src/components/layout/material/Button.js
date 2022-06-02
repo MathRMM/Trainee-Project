@@ -1,13 +1,6 @@
 import styled from "styled-components";
 
-    function Button(props){
-        return(
-            <Btn>
-                {props.children}
-            </Btn>
-        )
-    }
-const Btn = styled.button`
+export default styled.button`
     width:60px;
     background-color: rgb(255, 255, 255);
     margin: 2px;
@@ -16,6 +9,13 @@ const Btn = styled.button`
 
     border-radius: 5px;
     border-color: #0066ff;
-`
+    cursor:pointer;
+        :hover {
+            background: #c4e0ff;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+        }
 
-export default Button;
+`;
+
+
+

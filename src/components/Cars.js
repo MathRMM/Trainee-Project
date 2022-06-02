@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 
 import Title from "./layout/material/Title";
 import Counter from "./layout/material/Counter";
-import FillTable from "./FillTableCar";
+import FillTableCar from "./FillTableCar";
 
 /* -------------startando ----------- */
 function Cars(props) {
@@ -12,7 +12,7 @@ function Cars(props) {
         return (
             <div className="tablepage">
                 <div className="top">
-                    <Title text="Carros" />
+                    <Title>Carros</Title>
                     <Link to="/cars/newcar">
                         <Button variant="outlined">
                             <ion-icon name="add-circle-outline"></ion-icon>
@@ -30,21 +30,19 @@ function Cars(props) {
                         </tr>
                     </thead>
                     <tbody>
-                        {props.cars.map((props) => (
-                            <FillTable
-                                dicePlate={props.plate}
-                                diceColor={props.color}
-                                diceBrand={props.brand}
+                        {props.cars.map((car) => (
+                            <FillTableCar
+                                car={car}
                             />
                         ))}
                     </tbody>
                 </table>
-                <Counter text="carros" value={props.cars.length}/>
+                <Counter text="carros" value={props.cars.length} />
             </div>
         );
-    }else {
-        return(
-            <Title text="Carregando..."/>
+    } else {
+        return (
+            <Title text="Carregando..." />
         )
     }
 }

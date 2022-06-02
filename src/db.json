@@ -1,38 +1,30 @@
 {
   "brands": [
     {
-      "id": "0",
-      "name": "Mitsubishi"
+      "id": "1",
+      "name": "Audi"
     },
     {
-      "id": "1",
-      "name": "Subaru"
+      "id": "2",
+      "name": "Subaro"
+    },
+    {
+      "id": "3",
+      "name": "Mitsubishi"
     }
   ],
   "cars": [
     {
-      "id": "0",
-      "plate": "QJU-9791",
-      "color": "Preto",
+      "id": 8998,
+      "plate": "OTA-9542",
+      "color": "Amarelo",
       "brand": "Mitsubishi"
     },
     {
-      "id": "1",
-      "plate": "GKU-8002",
-      "color": "Laranja",
-      "brand": "Subaru"
-    },
-    {
-      "id": "2",
+      "id": 3603,
       "plate": "LQK-8655",
-      "color": "Branco",
-      "brand": "BMW"
-    },
-    {
-      "id": 3,
-      "plate": "LQK-8655",
-      "color": "Preto",
-      "brand": "Mitsubishi"
+      "color": "Vermelho",
+      "brand": "Subaro"
     }
   ]
 }

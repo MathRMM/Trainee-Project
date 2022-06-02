@@ -11,20 +11,19 @@ import NewCar from './NewCar'
 
 export default function App() {
     const [cars, setCar] = useState([]);
+    useEffect(() => {
+        axios.get("http://localhost:3000/cars")
+            .then((response) => {
+                setCar(response.data)
+            });
+    }, []);
     const [brands, setBrands] = useState([])
     useEffect(() => {
-        const promise = axios.get("http://localhost:3000/cars");
-        promise.then((response) => {
-            setCar(response.data)
-        });
+        axios.get("http://localhost:3000/brands")
+            .then((response) => {
+                setBrands(response.data)
+            });
     }, []);
-    useEffect(() => {
-        const promise = axios.get("http://localhost:3000/brands");
-        promise.then((response) => {
-            setBrands(response.data)
-        });
-    }, []);
-
     return (
         <BrowserRouter>
             <main>
@@ -39,4 +38,3 @@ export default function App() {
         </BrowserRouter>
     );
 }
-
